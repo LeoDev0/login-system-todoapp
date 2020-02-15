@@ -1,0 +1,105 @@
+h2 {
+  /* margin: 0 0 10px 0; */
+  margin: 0;
+  font-size: bold;
+}
+
+.container {
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 30%;
+}
+
+.upper-nav {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.upper-nav h3 {
+  margin: 0;
+}
+
+/* -------------------------- */
+
+.todo-form {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-flow: row nowrap;
+  margin-bottom: 10px;
+}
+
+.todo-input {
+  margin-right: 3px;
+  width: 100%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: rgba(134, 134, 134, 0.1);
+  border-radius: 5px;
+}
+
+.actions {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-flow: row nowrap;
+}
+
+.btn {
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  cursor: pointer;
+  -webkit-transition: ease 0.3s;
+  transition: ease 0.3s;
+}
+
+.submit {
+  background-color: #6675df;
+}
+
+.submit:hover {
+  background-color: #3647bb;
+}
+
+a {
+  text-decoration: none;
+  margin-left: 5px;
+  text-align: right;
+}
+
+.delete {
+  background-color: #ec2525;
+}
+
+.delete:hover {
+  background-color: #c90d0d;
+}
+
+.edit {
+  background-color: #828282;
+}
+
+.edit:hover {
+  background-color: #666666;
+}
