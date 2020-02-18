@@ -1,8 +1,6 @@
-<link rel="stylesheet" href="css/style.css">
-
 <?php
-
 require_once "config.php";
+include "templates/header.php";
 session_start();
 
 if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
@@ -33,9 +31,27 @@ if (isset($_POST['user']) && !empty($_POST['user'])) {
 }
 ?>
 
-<div class="container">
+<div class="login-container">
+  <h1>Login</h1>
 
   <form method="post">
+    <div class="form">
+      <input type="text" name="user" placeholder=" " />
+      <label for="user" class="label-name">
+        <span class="content-name">Usuário</span>
+      </label>
+    </div>
+    <div class="form">
+      <input type="password" name="senha" placeholder=" " />
+      <label for="senha" class="label-name">
+        <span class="content-name">Senha</span>
+      </label>
+    </div>
+    <button>Login</button>
+  </form>
+  <br>
+  <a class="link" href="signup.php">Não tem conta? Faça uma.</a>
+  <!-- <form method="post">
     <label for="user">Usuário</label><br>
     <input type="text" name="user"><br><br>
     <label for="senha">Senha</label><br>
@@ -43,6 +59,11 @@ if (isset($_POST['user']) && !empty($_POST['user'])) {
     <button>Login</button>
   </form>
   <br>
-  <a href="signup.php">Não tem conta? Faça uma.</a>
+  <a href="signup.php">Não tem conta? Faça uma.</a> -->
 
 </div>
+
+
+<?php
+include "templates/footer.php";
+?>

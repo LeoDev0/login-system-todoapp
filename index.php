@@ -21,7 +21,9 @@ $stmt = $pdo->query($sql);
 
 <div class="upper-nav">
   <h3>Seja bem-vindo, <?= $dados['nome'] ?></h3>
-  <a href="logout.php">Logout</a>
+  <a href="logout.php">Logout
+    <i class="fas fa-sign-out-alt"></i>
+  </a>
 </div>
 
 <div class="container">

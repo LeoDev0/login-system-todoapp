@@ -2,6 +2,7 @@
 require_once "config.php";
 include "templates/header.php";
 session_start();
+
 $id = $_GET['id'];
 $user_id = $_SESSION['id'];
 
@@ -41,3 +42,7 @@ if (isset($_POST['todo-alterado']) && !empty($_POST['todo-alterado'])) {
     <button class="btn submit">Salvar</button>
   </form>
 </div>
+
+<?php
+include "templates/footer.php";
+?>

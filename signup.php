@@ -1,7 +1,6 @@
-<link rel="stylesheet" href="css/style.css">
-
 <?php
 require_once "config.php";
+include "templates/header.php";
 session_start();
 
 if (isset($_POST['user']) && !empty($_POST['user'])) {
@@ -29,9 +28,13 @@ if (isset($_POST['user']) && !empty($_POST['user'])) {
     <input type="text" name="user" placeholder="Defina nome de usuário"><br><br>
     <label for="senha">Senha</label><br>
     <input type="password" name="senha" placeholder="Defina sua senha"><br><br>
-    <button>Signup</button>
+    <button>Registrar</button>
   </form>
   <br>
   <a href="login.php">Já tem conta? Faça login.</a>
 
 </div>
+
+<?php
+include "templates/footer.php";
+?>
