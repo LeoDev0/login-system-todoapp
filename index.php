@@ -51,7 +51,8 @@ $stmt = $pdo->query($sql);
     echo '<br />';
     }
   } else {
-    echo "<center>Ainda não há ToDos!</center>";
+    // echo "<center>Ainda não há ToDos!</center>";
+    echo "Ainda não há ToDos!";
   }
   ?>
   </ul>
