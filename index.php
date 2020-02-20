@@ -13,7 +13,7 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
   exit;
 }
 
-include "templates/header.php";
+include "src/templates/header.php";
 
 $sql = "SELECT * FROM todos WHERE user_id = $id ORDER BY id DESC";
 $stmt = $pdo->query($sql);
@@ -21,17 +21,24 @@ $stmt = $pdo->query($sql);
 
 <div class="upper-nav">
   <h3>Seja bem-vindo, <?= $dados['nome'] ?></h3>
-  <a href="logout.php">Logout
+  <a class="white-box" href="logout.php">Logout
     <i class="fas fa-sign-out-alt"></i>
   </a>
 </div>
 
 <div class="container">
-  <h2>My ToDo's</h2>
+  <h2>Meus ToDo's</h2>
   <br>
   <form method="post" class="todo-form">
-    <input type="text" name="todo" class="todo-input" placeholder="Adicionar tarefa">
+    <div class="form">
+      <input type="text" name="todo" placeholder=" ">
+      <label for="todo" class="label-name">
+        <span class="content-name">Adicionar tarefa</span>
+      </label>
+    </div>
     <button class="btn submit">Adicionar</button>
+    <!-- <input type="text" name="todo" class="todo-input" placeholder="Adicionar tarefa">
+    <button class="btn submit">Adicionar</button> -->
   </form>
   <br>
   <ul>
@@ -52,7 +59,7 @@ $stmt = $pdo->query($sql);
     }
   } else {
     // echo "<center>Ainda não há ToDos!</center>";
-    echo "Ainda não há ToDos!";
+    echo "Ainda não há Todos!";
   }
   ?>
   </ul>
@@ -75,5 +82,5 @@ if (isset($_POST['todo']) && !empty($_POST['todo'])) {
 
 <script src="https://kit.fontawesome.com/6497846d4f.js" crossorigin="anonymous"></script>
 <?php
-include "templates/footer.php";
+include "src/templates/footer.php";
 ?>

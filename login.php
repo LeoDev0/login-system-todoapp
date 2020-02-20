@@ -1,6 +1,6 @@
 <?php
 require_once "config.php";
-include "templates/header.php";
+include "src/templates/header.php";
 session_start();
 
 if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
@@ -26,7 +26,9 @@ if (isset($_POST['user']) && !empty($_POST['user'])) {
 
     header("Location: index.php");
   } else {
-    echo "usuário inválido";
+    echo '<script language="javascript">';
+    echo 'alert("Usuário ou senha inválidos!")';
+    echo '</script>';
   }
 }
 ?>
@@ -47,23 +49,12 @@ if (isset($_POST['user']) && !empty($_POST['user'])) {
         <span class="content-name">Senha</span>
       </label>
     </div>
-    <button>Login</button>
+    <button>Entrar</button>
   </form>
   <br>
   <a class="link" href="signup.php">Não tem conta? Faça uma.</a>
-  <!-- <form method="post">
-    <label for="user">Usuário</label><br>
-    <input type="text" name="user"><br><br>
-    <label for="senha">Senha</label><br>
-    <input type="password" name="senha"><br><br>
-    <button>Login</button>
-  </form>
-  <br>
-  <a href="signup.php">Não tem conta? Faça uma.</a> -->
-
 </div>
 
-
 <?php
-include "templates/footer.php";
+include "src/templates/footer.php";
 ?>

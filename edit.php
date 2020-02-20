@@ -1,6 +1,6 @@
 <?php
 require_once "config.php";
-include "templates/header.php";
+include "src/templates/header.php";
 session_start();
 
 $id = $_GET['id'];
@@ -32,17 +32,23 @@ if (isset($_POST['todo-alterado']) && !empty($_POST['todo-alterado'])) {
 }
 ?>
 
-<a href="index.php">↩️  Voltar</a>
+<div class="upper-nav">
+  <a style="color:blue;" class="white-box" href="index.php">↩️  Voltar</a>
+</div>
 <br><br><br>
 
 <div class="container">
-  <form method="post">
-    <br>
-    <input type="text" name="todo-alterado" placeholder="Editar Todo" value="<?= $todo['todo'] ?>"> <!-- O atual valor do todo é renderizado no input -->
+  <form method="post" class="todo-form">
+    <div class="form">
+        <input type="text" name="todo-alterado" placeholder=" " value="<?= $todo['todo'] ?>"/>
+        <label for="todo-alterado" class="label-name">
+          <span class="content-name"></span>
+        </label>
+    </div>
     <button class="btn submit">Salvar</button>
   </form>
 </div>
 
 <?php
-include "templates/footer.php";
+include "src/templates/footer.php";
 ?>

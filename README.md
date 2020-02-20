@@ -13,9 +13,9 @@ A simple database todo app connecting to MySQL using PHP
 </ul>
 
 <h2>Add in the future</h2>
-<ul>
-  <li>Create a PHP script to install the database and create table structure (install.php).</li>
-  <li>Save user credentials in the browser using cookies</li>
-  <li>Refactor the code making the app Object-oriented</li>
-  <li>Refactor the code using the MVC pattern (Model, View, Controller)</li>
-</ul>
+
+- [x] Make a beautiful UI
+- [] Create a PHP script to install the database and create table structure (install.php)
+- [] Save user credentials in the browser using cookies
+- [] Refactor the code making the app Object-oriented
+- [] Refactor the code using the MVC pattern (Model, View, Controller)

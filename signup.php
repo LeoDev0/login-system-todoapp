@@ -1,6 +1,6 @@
 <?php
 require_once "config.php";
-include "templates/header.php";
+include "src/templates/header.php";
 session_start();
 
 if (isset($_POST['user']) && !empty($_POST['user'])) {
@@ -21,20 +21,35 @@ if (isset($_POST['user']) && !empty($_POST['user'])) {
 }
 ?>
 
-<div class="container">
+<div class="login-container">
+  <h1>Sign Up</h1>
 
-  <form method="post">
-    <label for="user">Usuário</label><br>
-    <input type="text" name="user" placeholder="Defina nome de usuário"><br><br>
-    <label for="senha">Senha</label><br>
-    <input type="password" name="senha" placeholder="Defina sua senha"><br><br>
+  <form method="post" id="signup-form">
+    <div class="form">
+      <input type="text" name="user" placeholder=" " />
+      <label for="user" class="label-name">
+        <span class="content-name">Defina nome de usuário</span>
+      </label>
+    </div>
+    <div class="form">
+      <input type="password" name="senha" placeholder=" " />
+      <label for="senha" class="label-name senha">
+        <span class="content-name">Defina a senha</span>
+      </label>
+    </div>
+    <div class="form">
+      <input type="password" name="senha-repetida" placeholder=" " />
+      <label for="senha-repetida" class="label-name senha">
+        <span class="content-name">Repita a senha</span>
+      </label>
+    </div>
     <button>Registrar</button>
   </form>
   <br>
   <a href="login.php">Já tem conta? Faça login.</a>
-
 </div>
 
+<script src="src/js/script.js"></script>
 <?php
-include "templates/footer.php";
+include "src/templates/footer.php";
 ?>
