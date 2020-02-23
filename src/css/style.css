@@ -2,8 +2,6 @@ body {
   font-family: sans-serif;
   font-size: 15px;
   margin: 0;
-  /* background: url("https://images.unsplash.com/photo-1518655048521-f130df041f66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80")
-    no-repeat center center fixed; */
   background: url("../images/bg.jpg") no-repeat center center fixed;
   background-size: cover;
 }
@@ -23,10 +21,27 @@ h2 {
 
 @media (max-width: 576px) {
   .container {
-    /* max-width: 540px; */
     margin-left: 10px;
     margin-right: 10px;
   }
+}
+
+.bg-image-login,
+.bg-image-signup {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background-size: cover;
+}
+
+.bg-image-login {
+  background-image: url("../images/bg2.jpg");
+}
+
+.bg-image-signup {
+  background-image: url("../images/bg3.jpg");
 }
 
 .login-container {
@@ -34,8 +49,6 @@ h2 {
   height: 420px;
   padding: 80px 40px;
   border-radius: 10px;
-  /* color: rgb(133, 133, 133); */
-  color: rgb(102, 102, 102);
   background-color: #8ec5fc;
   background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
   position: absolute;
@@ -53,7 +66,6 @@ h2 {
 .login-container button {
   width: 100%;
   margin: 30px 0;
-  /* background-color: #e0c3fc; */
   background: linear-gradient(to bottom, #e0c3fc, #d8b0fd);
   padding: 7px;
   border: none;
@@ -78,22 +90,34 @@ h2 {
   justify-content: space-between;
 }
 
-.upper-nav h3 {
+.profile-div h3 {
   margin: 0;
   padding: 10px;
+  float: right;
 }
 
-/* .upper-nav a {
-  background-color: #ffffffb6;
-  padding: 10px;
-  border-radius: 10px;
-} */
+.submit-profile-photo {
+  display: none;
+  /* visibility: hidden; */
+  width: 0;
+  height: 0;
+}
+
+.profile-photo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 4px solid #d8b0fd;
+  /* border: 0; */
+  cursor: pointer;
+}
 
 .white-box {
   background-color: #ffffffb6;
   padding: 10px;
   border-radius: 10px;
   font-size: 17px;
+  height: 20px;
 }
 
 .upper-nav a,
@@ -109,11 +133,6 @@ h2 {
   flex-flow: row nowrap;
   margin-bottom: 20px;
 }
-
-/* .todo-input {
-  margin-right: 10px;
-  width: 100%;
-} */
 
 ul {
   margin: 0;
@@ -220,6 +239,7 @@ a:hover {
   height: 100%;
   pointer-events: none;
   border-bottom: 1px solid rgb(146, 146, 146);
+  color: rgb(102, 102, 102);
 }
 
 .form label::after {

@@ -5,6 +5,7 @@ const inputSenhaRepetida = document.querySelector(
 const signupForm = document.getElementById("signup-form");
 const labelSenha = document.querySelectorAll(".form label::after");
 
+// Confirma se a senha foi digitada corretamente nos dois campos de Signup
 signupForm.onsubmit = () => {
   if (inputSenha.value != inputSenhaRepetida.value) {
     alert("Senhas digitadas não são iguais!");
@@ -12,7 +13,3 @@ signupForm.onsubmit = () => {
     return false;
   }
 };
-
-alert("teste");
-
-// labelSenha.style.borderBottom = "3px solid red";

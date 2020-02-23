@@ -33,27 +33,32 @@ if (isset($_POST['user']) && !empty($_POST['user'])) {
 }
 ?>
 
-<div class="login-container">
-  <h1>Login</h1>
+<div class="bg-image-login">
 
-  <form method="post">
-    <div class="form">
-      <input type="text" name="user" placeholder=" " />
-      <label for="user" class="label-name">
-        <span class="content-name">Usuário</span>
-      </label>
-    </div>
-    <div class="form">
-      <input type="password" name="senha" placeholder=" " />
-      <label for="senha" class="label-name">
-        <span class="content-name">Senha</span>
-      </label>
-    </div>
-    <button>Entrar</button>
-  </form>
-  <br>
-  <a class="link" href="signup.php">Não tem conta? Faça uma.</a>
+  <div class="login-container">
+    <h1>Login</h1>
+  
+    <form method="post">
+      <div class="form">
+        <input type="text" name="user" placeholder=" " />
+        <label for="user" class="label-name">
+          <span class="content-name">Usuário</span>
+        </label>
+      </div>
+      <div class="form">
+        <input type="password" name="senha" placeholder=" " />
+        <label for="senha" class="label-name">
+          <span class="content-name">Senha</span>
+        </label>
+      </div>
+      <button>Entrar</button>
+    </form>
+    <br>
+    <a class="link" href="signup.php">Não tem conta? Faça uma.</a>
+  </div>
+
 </div>
+
 
 <?php
 include "src/templates/footer.php";

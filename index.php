@@ -20,14 +20,21 @@ $stmt = $pdo->query($sql);
 ?>
 
 <div class="upper-nav">
-  <h3>Seja bem-vindo, <?= $dados['nome'] ?></h3>
+  <div class="profile-div">
+    <form action="submit-file.php" method="post" enctype="multipart/form-data">
+      <input class="submit-profile-photo" type="file" name="submit-photo"> 
+      <button class="submit-profile-photo"></button>
+    </form>
+    <img class="profile-photo" src="src/images/profile-photo/<?= $dados['profile_pic'] ?>" title="Trocar foto de perfil">
+    <h3><?= $dados['nome'] ?></h3>
+  </div>
   <a class="white-box" href="logout.php">Logout
     <i class="fas fa-sign-out-alt"></i>
   </a>
 </div>
 
 <div class="container">
-  <h2>Meus ToDo's</h2>
+  <h2>Minhas Tarefas</h2>
   <br>
   <form method="post" class="todo-form">
     <div class="form">
@@ -37,8 +44,6 @@ $stmt = $pdo->query($sql);
       </label>
     </div>
     <button class="btn submit">Adicionar</button>
-    <!-- <input type="text" name="todo" class="todo-input" placeholder="Adicionar tarefa">
-    <button class="btn submit">Adicionar</button> -->
   </form>
   <br>
   <ul>
@@ -59,7 +64,7 @@ $stmt = $pdo->query($sql);
     }
   } else {
     // echo "<center>Ainda não há ToDos!</center>";
-    echo "Ainda não há Todos!";
+    echo "Ainda não há tarefas!";
   }
   ?>
   </ul>
@@ -81,6 +86,7 @@ if (isset($_POST['todo']) && !empty($_POST['todo'])) {
 ?>
 
 <script src="https://kit.fontawesome.com/6497846d4f.js" crossorigin="anonymous"></script>
+<script src="src/js/index-page.js"></script>
 <?php
 include "src/templates/footer.php";
 ?>

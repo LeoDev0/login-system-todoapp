@@ -1,1 +1,7 @@
 config.php
+
+# Ignorar todas as imagens de perfil subidas pelos usuarios...
+/src/images/profile-photo/*
+
+#...exceto a imagem padrão de perfil 
+!/src/images/profile-photo/default-profile.png
