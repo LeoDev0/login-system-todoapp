@@ -21,11 +21,14 @@ $stmt = $pdo->query($sql);
 
 <div class="upper-nav">
   <div class="profile-div">
-    <form action="submit-file.php" method="post" enctype="multipart/form-data">
+    <a class="submit-file-photo" href="settings.php">
+    <img class="profile-photo" src="src/images/profile-photo/<?= $dados['profile_pic'] ?>" title="Configurações">
+    </a>
+    <!-- <form action="submit-file.php" method="post" enctype="multipart/form-data">
       <input class="submit-profile-photo" type="file" name="submit-photo"> 
       <button class="submit-profile-photo"></button>
-    </form>
-    <img class="profile-photo" src="src/images/profile-photo/<?= $dados['profile_pic'] ?>" title="Trocar foto de perfil">
+    </form> -->
+    <!-- <img class="profile-photo" src="src/images/profile-photo/<?= $dados['profile_pic'] ?>" title="Trocar foto de perfil"> -->
     <h3><?= $dados['nome'] ?></h3>
   </div>
   <a class="white-box" href="logout.php">Logout
@@ -86,7 +89,6 @@ if (isset($_POST['todo']) && !empty($_POST['todo'])) {
 ?>
 
 <script src="https://kit.fontawesome.com/6497846d4f.js" crossorigin="anonymous"></script>
-<script src="src/js/index-page.js"></script>
 <?php
 include "src/templates/footer.php";
 ?>

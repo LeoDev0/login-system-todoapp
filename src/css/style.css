@@ -96,19 +96,17 @@ h2 {
   float: right;
 }
 
-.submit-profile-photo {
+/* .submit-profile-photo {
   display: none;
-  /* visibility: hidden; */
   width: 0;
   height: 0;
-}
+} */
 
 .profile-photo {
   width: 45px;
   height: 45px;
   border-radius: 50%;
   border: 4px solid #d8b0fd;
-  /* border: 0; */
   cursor: pointer;
 }
 
@@ -180,13 +178,19 @@ li {
 
 .submit {
   background-color: #6675df;
-  height: 40px;
+  /* height: 40px;
   margin-left: 10px;
-  align-self: flex-end;
+  align-self: flex-end; */
 }
 
 .submit:hover {
   background-color: #3647bb;
+}
+
+.todo-form .submit {
+  height: 40px;
+  margin-left: 10px;
+  align-self: flex-end;
 }
 
 a {
@@ -271,4 +275,21 @@ a:hover {
 .form input:focus + .label-name::after,
 .form input:not(:placeholder-shown) + .label-name::after {
   transform: translateX(0);
+}
+
+/* ---------------------------- */
+
+.delete-account-btn {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 5px;
+  padding: 10px;
+}
+
+.delete-form {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 0 auto;
+  width: 50%;
 }

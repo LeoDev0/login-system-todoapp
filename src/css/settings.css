@@ -1,0 +1,40 @@
+.settings-box {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.change-photo-box,
+.change-pass-box {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: 15px;
+  min-width: 265px;
+}
+
+.change-photo-box img {
+  width: 22vh;
+  height: 22vh;
+  border-radius: 50%;
+  justify-self: center;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.change-pass-box h3 {
+  margin-bottom: 35px;
+}
+
+.change-pass-box label,
+.change-pass-box input {
+  align-self: flex-start;
+  box-sizing: border-box;
+}
+
+.change-pass-box input {
+  width: 100%;
+  margin-bottom: 15px;
+}

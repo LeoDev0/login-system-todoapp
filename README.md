@@ -10,6 +10,8 @@ A simple database todo app connecting to MySQL using PHP
   <li>Filter user data</li>
   <li>Prepared Statements (to avoid SQL injection and harden the security)</li>
   <li>Saving and ending user sessions</li>
+  <li>User account deletion</li>
+  <li>Password and user profile picture change</li>
 </ul>
 
 <h2>Add in the future</h2>
