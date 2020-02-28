@@ -24,11 +24,6 @@ $stmt = $pdo->query($sql);
     <a class="submit-file-photo" href="settings.php">
     <img class="profile-photo" src="src/images/profile-photo/<?= $dados['profile_pic'] ?>" title="Configurações">
     </a>
-    <!-- <form action="submit-file.php" method="post" enctype="multipart/form-data">
-      <input class="submit-profile-photo" type="file" name="submit-photo"> 
-      <button class="submit-profile-photo"></button>
-    </form> -->
-    <!-- <img class="profile-photo" src="src/images/profile-photo/<?= $dados['profile_pic'] ?>" title="Trocar foto de perfil"> -->
     <h3><?= $dados['nome'] ?></h3>
   </div>
   <a class="white-box" href="logout.php">Logout

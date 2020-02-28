@@ -35,7 +35,6 @@ if (isset($_POST['senha']) && !empty($_POST['senha'])) {
     echo '</script>';
   }
 }
-
 ?>
 
 <div class="upper-nav">
