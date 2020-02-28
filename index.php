@@ -41,7 +41,7 @@ $stmt = $pdo->query($sql);
   <br>
   <form method="post" class="todo-form">
     <div class="form">
-      <input type="text" name="todo" placeholder=" ">
+      <input type="text" maxlength="30" name="todo" placeholder=" ">
       <label for="todo" class="label-name">
         <span class="content-name">Adicionar tarefa</span>
       </label>

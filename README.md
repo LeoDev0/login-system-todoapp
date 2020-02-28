@@ -1,6 +1,6 @@
 # PHP todo app with user authentication
 
-A simple database todo app connecting to MySQL using PHP
+A database todo app connecting to MySQL using PHP
 
 <h2>Lessons Learned</h2>
 <ul>

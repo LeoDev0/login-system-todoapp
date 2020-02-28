@@ -44,8 +44,8 @@ if (isset($_POST['senha']) && !empty($_POST['senha'])) {
 <br><br><br>
 
 <div class="container">
-  <form class="delete-form" method="post">
-    <label for="senha">Digite sua senha</label><br>
+  <form class="delete-form normal-input" method="post">
+    <label for="senha">Confirme sua senha</label><br>
     <input type="password" name="senha">
     <button style="margin-top: 25px;" class="btn delete delete-account-btn">Confirmar deleção</button>
   </form>

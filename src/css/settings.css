@@ -1,15 +1,23 @@
 .settings-box {
+  display: -webkit-box;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
   flex-flow: row wrap;
   justify-content: space-around;
 }
 
 .change-photo-box,
 .change-pass-box {
+  -webkit-box-flex: 1;
   flex: 1;
   text-align: center;
+  display: -webkit-box;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
   flex-flow: column nowrap;
+  -webkit-box-align: center;
   align-items: center;
   padding: 15px;
   min-width: 265px;

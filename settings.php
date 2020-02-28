@@ -4,18 +4,6 @@ require_once "config.php";
 session_start();
 $id = $_SESSION['id'];
 
-// $directory = "src/images/profile-photo/";
-// $filecount = 0;
-// $files = glob($directory . "*");
-// print_r($files[0]);
-// if ($files){
-//  $filecount = count($files);
-// }
-// echo "There were $filecount files";
-
-// unlink("src/images/profile-photo/user_id21.png");
-
-
 if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
   $sql = "SELECT * FROM usuarios WHERE id = $id";
   $dados = $pdo->query($sql)->fetch();  
@@ -25,18 +13,27 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 
 if (isset($_FILES['submit-photo']) && !empty($_FILES['submit-photo'])) {
   $foto = $_FILES['submit-photo'];
-  // $fileExtension = substr($foto['name'], -4, 4);
-  // $nomeDoArquivo = "user_id" . $id . $fileExtension;
-  $nomeDoArquivo = "user_id" . $id . ".jpg";
-  move_uploaded_file($foto['tmp_name'], 'src/images/profile-photo/' . $nomeDoArquivo);
 
-  $sql = "UPDATE usuarios SET profile_pic = :nomeDoArquivo WHERE id = :id";
-  $stmt = $pdo->prepare($sql);
-  $stmt->bindValue(":nomeDoArquivo", $nomeDoArquivo);
-  $stmt->bindValue(":id", $id);
-  $stmt->execute();
+  // Verificando se o arquivo escolhido para imagem de perfil é realmente uma 
+  // imagem (apenas as extensões ".jpg", ".jpeg" e ".png" são permitidas)
+  $allowedFileTypes = ['image/png', 'image/jpeg', 'image/jpg'];
+  if (in_array($foto['type'], $allowedFileTypes)) {
+    $nomeDoArquivo = "user_id" . $id . ".jpg";
+    move_uploaded_file($foto['tmp_name'], 'src/images/profile-photo/' . $nomeDoArquivo);
 
-  header("Location: settings.php");
+    $sql = "UPDATE usuarios SET profile_pic = :nomeDoArquivo WHERE id = :id";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindValue(":nomeDoArquivo", $nomeDoArquivo);
+    $stmt->bindValue(":id", $id);
+    $stmt->execute();
+
+    header("Location: settings.php");
+
+  } else {
+    echo '<script language="javascript" >';
+    echo 'alert("Apenas arquivos de imagem jpg/jpeg/png são permitidos!")';
+    echo '</script>';
+  }
 }
 
 if (isset($_POST['old-pass']) && !empty($_POST['old-pass'])) {
@@ -83,7 +80,7 @@ if (isset($_POST['old-pass']) && !empty($_POST['old-pass'])) {
   <div class="settings-box">
     <div class="change-pass-box">
       <h3>Trocar senha</h3>
-      <form id="pass-change-form" class="change-pass-box" method="post">
+      <form id="pass-change-form" class="change-pass-box normal-input" method="post">
         <label for="old-pass">Senha atual:</label><br>
         <input type="password" name="old-pass">
         <label for="new-pass">Nova senha:</label><br>

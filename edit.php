@@ -40,7 +40,7 @@ if (isset($_POST['todo-alterado']) && !empty($_POST['todo-alterado'])) {
 <div class="container">
   <form method="post" class="todo-form">
     <div class="form">
-        <input type="text" name="todo-alterado" placeholder=" " value="<?= $todo['todo'] ?>"/>
+        <input type="text" maxlength="30" name="todo-alterado" placeholder=" " value="<?= $todo['todo'] ?>"/>
         <label for="todo-alterado" class="label-name">
           <span class="content-name"></span>
         </label>
