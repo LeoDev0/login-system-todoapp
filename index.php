@@ -21,8 +21,8 @@ $stmt = $pdo->query($sql);
 
 <div class="upper-nav">
   <div class="profile-div">
-    <a class="submit-file-photo" href="settings.php">
-    <img class="profile-photo" src="src/images/profile-photo/<?= $dados['profile_pic'] ?>" title="Configurações">
+    <a data-tippy-content="Configurações" class="submit-file-photo" href="settings.php">
+      <img class="profile-photo" src="src/images/profile-photo/<?= $dados['profile_pic'] ?>">
     </a>
     <h3><?= $dados['nome'] ?></h3>
   </div>
@@ -61,7 +61,6 @@ $stmt = $pdo->query($sql);
     echo '<br />';
     }
   } else {
-    // echo "<center>Ainda não há ToDos!</center>";
     echo "Ainda não há tarefas!";
   }
   ?>
@@ -84,6 +83,14 @@ if (isset($_POST['todo']) && !empty($_POST['todo'])) {
 ?>
 
 <script src="https://kit.fontawesome.com/6497846d4f.js" crossorigin="anonymous"></script>
+<!-- js pro tooltip ao passar o mouse por cima da foto de perfil -->
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+<script>
+tippy('[data-tippy-content]', {
+  placement: 'bottom'
+});
+</script>
 <?php
 include "src/templates/footer.php";
 ?>
