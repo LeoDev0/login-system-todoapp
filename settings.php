@@ -92,7 +92,7 @@ if (isset($_POST['old-pass']) && !empty($_POST['old-pass'])) {
     <div class="change-photo-box">
       <img src="src/images/profile-photo/<?= $dados['profile_pic'] ?>">
       <form id="profile-photo-form" method="post" enctype="multipart/form-data">
-        <input onchange="this.form.submit()" hidden class="submit-profile-photo" type="file" name="submit-photo">
+        <input onchange="this.form.submit()" hidden class="submit-profile-photo" type="file" name="submit-photo" accept=".png, .jpg, .jpeg">
       </form>
       <button id="change-photo-btn" class="btn edit">Trocar foto</button>
     </div>
